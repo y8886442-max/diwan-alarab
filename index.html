@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>ديوان العرب — حمّل التطبيق</title>
+<meta name="description" content="ديوان العرب: أكثر من 3000 قصيدة من الغزل والفخر والهجاء لأعظم شعراء العرب.">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --gold:#d4af37; --ink:#f2ead8; --mute:#a8a290; --bg:#050508; --card:#101015; --line:#26262f; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--ink); font-family:'Tajawal',Arial,sans-serif; line-height:1.8; }
+  .hero { position:relative; min-height:100vh; min-height:100dvh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; padding:24px; }
+  .hero video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+  .hero::after { content:''; position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, rgba(5,5,8,.92) 100%); }
+  .content { position:relative; z-index:2; max-width:640px; }
+  .logo { width:96px; height:96px; border-radius:22px; border:2px solid var(--gold); margin-bottom:18px; }
+  h1 { font-size:clamp(40px,9vw,72px); font-weight:800; color:var(--gold); line-height:1.2; text-shadow:0 2px 24px rgba(0,0,0,.7); }
+  .tag { font-size:clamp(17px,3.6vw,22px); color:var(--ink); margin:10px 0 28px; text-shadow:0 2px 12px rgba(0,0,0,.8); }
+  .btn { display:inline-block; background:var(--gold); color:#14110a; text-decoration:none; font-weight:800; font-size:20px; padding:16px 38px; border-radius:16px; box-shadow:0 8px 30px rgba(212,175,55,.35); transition:transform .15s; }
+  .btn:active { transform:scale(.97); }
+  .small { margin-top:14px; font-size:14px; color:var(--mute); }
+  .snd { position:fixed; z-index:50; top:16px; left:16px; background:rgba(0,0,0,.55); color:var(--ink); border:1px solid var(--line); border-radius:999px; padding:8px 16px; font:inherit; font-size:14px; cursor:pointer; }
+  section { max-width:980px; margin:0 auto; padding:64px 20px; }
+  h2 { color:var(--gold); font-size:30px; text-align:center; margin-bottom:32px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; }
+  .card b { display:block; color:var(--gold); font-size:20px; margin-bottom:6px; }
+  .card span { color:var(--mute); font-size:15px; }
+  .steps { counter-reset:s; display:grid; gap:14px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 20px; padding-right:64px; position:relative; }
+  .step::before { counter-increment:s; content:counter(s); position:absolute; right:18px; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; background:var(--gold); color:#14110a; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .cta { text-align:center; padding-top:8px; }
+  footer { text-align:center; color:var(--mute); font-size:14px; padding:28px 20px 40px; border-top:1px solid var(--line); }
+  .show { max-width:980px; margin:0 auto; padding:0 20px 64px; }
+  .show h2 { margin-bottom:24px; }
+  .vbox { border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 10px 40px rgba(0,0,0,.5); }
+  .vbox video { display:block; width:100%; max-height:80vh; object-fit:cover; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <video id="hero" autoplay muted loop playsinline poster="poster.jpg">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <button class="snd" id="snd" type="button">🔇 تشغيل الصوت</button>
+  <div class="content">
+    <img class="logo" src="icon.png" alt="ديوان العرب">
+    <h1>ديوان العرب</h1>
+    <p class="tag">كلمات خالدة .. في زمن يتغير</p>
+    <a class="btn" href="https://github.com/y8886442-max/diwan-alarab/releases/latest/download/diwan-alarab.apk" download>تحميل التطبيق للأندرويد</a>
+    <p class="small">ملف APK مباشر، مجاني، بدون تسجيل</p>
+  </div>
+</header>
+
+<section>
+  <h2>ماذا في الديوان؟</h2>
+  <div class="grid">
+    <div class="card"><b>أكثر من 3000 قصيدة</b><span>من الغزل والفخر والهجاء، مرتبة وسهلة التصفح.</span></div>
+    <div class="card"><b>14 شاعراً</b><span>من المتنبي وجرير وعنترة إلى قيس بن الملوح وعمرو بن كلثوم.</span></div>
+    <div class="card"><b>عن الشاعر</b><span>نبذة عن كل شاعر وسنة ولادته ووفاته داخل القصيدة نفسها.</span></div>
+    <div class="card"><b>بحث ومفضلة</b><span>ابحث بالعنوان أو الشاعر أو البيت، واحفظ قصائدك المفضلة.</span></div>
+  </div>
+</section>
+
+<section class="show">
+  <h2>شاهد الديوان</h2>
+  <div class="vbox"><video id="v2" muted loop playsinline preload="metadata" poster="poster2.jpg"><source src="video2.mp4" type="video/mp4"></video></div>
+</section>
+
+<section>
+  <h2>كيف أثبّته؟</h2>
+  <div class="steps">
+    <div class="step">اضغط زر التحميل ونزّل ملف التطبيق.</div>
+    <div class="step">افتح الملف من التنزيلات، ووافق على «السماح بالتثبيت من هذا المصدر» إذا طلب منك أندرويد ذلك.</div>
+    <div class="step">افتح «ديوان العرب» واستمتع بالقراءة.</div>
+  </div>
+  <p class="small" style="text-align:center;margin-top:16px">التطبيق خارج متجر Google Play، فقد يعرض أندرويد تنبيهاً قبل التثبيت، وهذا طبيعي.</p>
+  <div class="cta" style="margin-top:36px"><a class="btn" href="https://github.com/y8886442-max/diwan-alarab/releases/latest/download/diwan-alarab.apk" download>تحميل التطبيق</a></div>
+</section>
+
+<footer>ديوان العرب — مِنْ مَجْدِ القَوافِي، نَحْفَظُ أَثَرَ الأَوَّلِينَ</footer>
+
+<script>
+  var vids = [document.getElementById('hero'), document.getElementById('v2')];
+  var btn = document.getElementById('snd');
+  var soundOn = false;
+  var ratio = {};
+  vids.forEach(function (v, i) { ratio[i] = 0; });
+
+  function fadeTo(v, target, done) {
+    clearInterval(v._f);
+    var n = 0, start = v.volume;
+    v._f = setInterval(function () {
+      n++;
+      v.volume = start + (target - start) * (n / 10);
+      if (n >= 10) { clearInterval(v._f); v.volume = target; if (done) done(); }
+    }, 35);
+  }
+  function audio(v, on) {
+    if ((v._t === undefined ? 0 : v._t) === (on ? 1 : 0)) return;
+    v._t = on ? 1 : 0;
+    if (on) { if (v.muted) v.volume = 0; v.muted = false; fadeTo(v, 1); }
+    else { fadeTo(v, 0, function () { if (v._t === 0) v.muted = true; }); }
+  }
+  function pick() {
+    var best = -1, r = 0.3;
+    vids.forEach(function (v, i) { if (ratio[i] > r) { r = ratio[i]; best = i; } });
+    return best;
+  }
+  function refresh() {
+    var a = pick();
+    vids.forEach(function (v, i) {
+      if (i === a) {
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+        audio(v, soundOn);
+      } else {
+        v.pause();
+        audio(v, false);
+      }
+    });
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { ratio[vids.indexOf(e.target)] = e.intersectionRatio; });
+    refresh();
+  }, { threshold: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1] });
+  vids.forEach(function (v) { io.observe(v); });
+
+  btn.addEventListener('click', function () {
+    soundOn = !soundOn;
+    btn.textContent = soundOn ? '🔊 إيقاف الصوت' : '🔇 تشغيل الصوت';
+    refresh();
+  });
+  document.addEventListener('touchstart', refresh, { once: true, passive: true });
+  document.addEventListener('click', refresh, { once: true });
+</script>
+</body>
+</html>
